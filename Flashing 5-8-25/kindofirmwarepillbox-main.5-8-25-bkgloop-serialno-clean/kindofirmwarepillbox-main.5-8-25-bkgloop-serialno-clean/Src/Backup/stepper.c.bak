@@ -1,0 +1,412 @@
+#include "stepper.h"
+
+
+stepper_t *stp;
+stepper_t stepper[5];
+
+
+
+
+void startstepper(uint8_t i, uint8_t dir){
+	
+	switch (i)
+	{
+		
+		case 0:
+			
+			HAL_GPIO_WritePin(STP1_DIR_GPIO_Port, STP1_DIR_Pin, dir);
+			HAL_GPIO_WritePin(STP1_EN_GPIO_Port, STP1_EN_Pin, 0);
+			HAL_TIM_PWM_Start_IT(&htim16, TIM_CHANNEL_1);
+		
+		break;
+		case 1:
+			HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
+			HAL_GPIO_WritePin(STP2_DIR_GPIO_Port, STP2_DIR_Pin, dir);
+			HAL_GPIO_WritePin(STP2_EN_GPIO_Port, STP2_EN_Pin, 0);
+		break;
+		
+		case 3:
+			HAL_TIM_PWM_Start_IT(&htim1, TIM_CHANNEL_1);
+			HAL_GPIO_WritePin(STP4_DIR_GPIO_Port, STP4_DIR_Pin, !dir);
+			HAL_GPIO_WritePin(STP4_EN_GPIO_Port, STP4_EN_Pin, 0);
+		break;
+		case 4:
+			
+			HAL_TIM_PWM_Start_IT(&htim15, TIM_CHANNEL_1);
+			HAL_GPIO_WritePin(STP5_DIR_GPIO_Port, STP5_DIR_Pin, !dir);
+			HAL_GPIO_WritePin(STP5_EN_GPIO_Port, STP5_EN_Pin, 0);
+		break;
+		
+  }
+	
+/*
+	__HAL_TIM_SET_PRESCALER(&htim16, 40-1);
+	__HAL_TIM_SET_PRESCALER(&htim17, 40-1);
+	__HAL_TIM_SET_PRESCALER(&htim14, 40-1);
+	__HAL_TIM_SET_PRESCALER(&htim1, 40-1);
+	__HAL_TIM_SET_PRESCALER(&htim15, 40-1);*/
+}
+
+
+
+
+
+
+void setAlldac(void){
+	
+	SPI1->CR1 &= ~(1<<7); 
+	uint8_t aTxBuffer[2];
+
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	HAL_Delay(10);
+	
+	aTxBuffer[0]=0xA0;
+	aTxBuffer[1]=0x00;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,1000);
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	HAL_Delay(10);
+	
+	aTxBuffer[0]=0x80;
+	aTxBuffer[1]=0x04;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,1000);
+	
+	
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+	
+	aTxBuffer[0]=0x05;
+	aTxBuffer[1]=0x8B;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,100);
+
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+	
+	aTxBuffer[0]=0x15;
+	aTxBuffer[1]=0x5B;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,100);
+
+
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+		HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+	
+	aTxBuffer[0]=0x25;
+	aTxBuffer[1]=0x5B;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,100);
+
+
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+		HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+	
+	aTxBuffer[0]=0x35;
+	aTxBuffer[1]=0x8B;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,100);
+
+
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+		HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+	
+	aTxBuffer[0]=0x48;
+	aTxBuffer[1]=0x8B;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,100);
+
+
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	HAL_Delay(10);
+	
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	
+	
+}
+
+
+void setdac(uint8_t i){
+	SPI1->CR1 &= ~(1<<7); 
+	
+	uint8_t aTxBuffer[2];
+
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	__delay_ms(10);
+	
+	aTxBuffer[0]=0xA0;
+	aTxBuffer[1]=0x00;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,1000);
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	__delay_ms(10);
+	
+	aTxBuffer[0]=0x80;
+	aTxBuffer[1]=0x04;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,1000);
+	
+	
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	
+	switch(i){
+		case 0:
+			aTxBuffer[0]=0x0C;    //original: 0x04
+			aTxBuffer[1]=0x8B;
+		HAL_GPIO_WritePin(STP1_EN_GPIO_Port, STP1_EN_Pin, GPIO_PIN_RESET);
+			break;
+		case 1:
+			aTxBuffer[0]=0x1F;   //original 0x18
+			aTxBuffer[1]=0xFF;	 //original 0x5B
+		HAL_GPIO_WritePin(STP2_EN_GPIO_Port, STP2_EN_Pin, GPIO_PIN_RESET);
+			break;
+		
+		case 3:
+			aTxBuffer[0]=0x3F;        ///  original 0x35 changed by Naman on 11/7 to ox33
+			aTxBuffer[1]=0xFB;       // original 0x8B changed by Naman on 11/7 to ox4B
+			HAL_GPIO_WritePin(STP4_EN_GPIO_Port, STP4_EN_Pin, GPIO_PIN_RESET);
+		break;
+		
+		case 4:
+			aTxBuffer[0]=0x46;
+			aTxBuffer[1]=0x8B;			 //original 0x8B changed by Naman on 11/7 to ox4B
+			HAL_GPIO_WritePin(STP5_EN_GPIO_Port, STP5_EN_Pin, GPIO_PIN_RESET);
+		break;
+		
+	}
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,100);
+
+
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	
+	
+}
+
+void setdacstop(uint8_t i){
+	
+	SPI1->CR1 &= ~(1<<7); 
+	uint8_t aTxBuffer[2];
+	
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+__delay_ms(10);
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	__delay_ms(10);
+	
+	aTxBuffer[0]=0xA0;
+	aTxBuffer[1]=0x00;
+	
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,100);
+	
+	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	__delay_ms(10);
+	
+	aTxBuffer[0]=0x80;
+	aTxBuffer[1]=0x04;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,100);
+	
+	
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);	
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	
+	switch(i){
+		case 0:
+			aTxBuffer[0]=0x00;
+		HAL_GPIO_WritePin(STP1_EN_GPIO_Port, STP1_EN_Pin, GPIO_PIN_SET);
+			
+			break;
+		case 1:
+			aTxBuffer[0]=0x10;
+		HAL_GPIO_WritePin(STP2_EN_GPIO_Port, STP2_EN_Pin, GPIO_PIN_SET);
+			break;
+		
+		case 3:
+			aTxBuffer[0]=0x30;
+		//printf("dacZstop\n");
+		HAL_GPIO_WritePin(STP4_EN_GPIO_Port, STP4_EN_Pin, GPIO_PIN_SET);
+			break;
+		case 4:
+			//printf("dacYstop");
+			aTxBuffer[0]=0x40;
+		HAL_GPIO_WritePin(STP5_EN_GPIO_Port, STP5_EN_Pin, GPIO_PIN_SET);
+			break;
+		
+	}
+	aTxBuffer[1]=0x00;
+	HAL_SPI_Transmit(&hspi2, aTxBuffer, 2,100);
+
+
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(AD_SYNC_GPIO_Port, AD_SYNC_Pin, GPIO_PIN_SET);
+	__delay_ms(10);
+	
+	HAL_GPIO_WritePin(AD_LDAC_GPIO_Port, AD_LDAC_Pin, GPIO_PIN_SET);
+	
+	
+}
+
+
+void assignstepper(uint8_t i,uint8_t v) {
+ 
+	switch (i)
+	{
+		case 0:
+  __HAL_TIM_SET_PRESCALER(&htim16, v);
+		break;
+		case 1:
+	__HAL_TIM_SET_PRESCALER(&htim17, v);
+		break;
+		case 2:
+	__HAL_TIM_SET_PRESCALER(&htim14, v);
+		break;
+		case 3:
+	__HAL_TIM_SET_PRESCALER(&htim1, v);
+		break;
+		case 4:
+	__HAL_TIM_SET_PRESCALER(&htim15, v);
+		break;
+		
+  }
+ 
+}
+
+
+
+void quadratic(float a, float b, float c, float* x1, float* x2) {
+  float  delta = b*b - 4 * a*c;
+  if (delta > 0) {
+    *x1 = (-b + sqrt(delta)) / (2 * a);
+    *x2 = (-b - sqrt(delta)) / (2 * a);
+  }
+}
+
+float constAccPeriod (void) {
+  float t, s, u, x1, x2;
+  u = stp->vhT;
+  s = (stp->steps - stp->st[1]*2)/2;
+ 
+  
+  quadratic(stp->am/2, stp->vt[1], - (s + stp->h*u*u*u/6), &x1, &x2);
+  t = x1 > 0 ? x1 : x2;
+  return t - u;
+}
+
+void stepInit(uint8_t i, uint32_t step) {
+  stp = &stepper[i];
+	stp->steps=step;
+  printf("stp:  %d\n",  stp->steps);
+  
+}
+
+uint8_t ti = 0;
+
+/*
+void stepCtrl2(void) {
+  float u = 0;
+  stp->time = (float)(HAL_GetTick()-stp->timeInit+1)/1000.0;
+  if ( stp->cnt <= stp->steps && stp->v>=0 ) {
+    u = stp->time - stp->t[ti];
+    
+    if ( stp->time>stp->t[ti+1] )   ti++;
+    stp->a = acc[ti](u);
+    stp->v = vel[ti](u);
+    stp->s = dis[ti](u);
+    assignstepper();
+  }
+  else {
+    HAL_TIM_PWM_Stop_IT(&htim2, TIM_CHANNEL_2);
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_6);
+    stp->cnt = 0;
+  }
+}
+*/
+
+
+void StopStp(uint8_t i){
+
+	switch (i){
+			case 0:
+    HAL_TIM_PWM_Stop(&htim16, TIM_CHANNEL_1);
+				HAL_GPIO_WritePin(STP1_EN_GPIO_Port, STP1_EN_Pin, 1);
+			break;
+			case 1:
+		HAL_TIM_PWM_Stop(&htim17, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Stop_IT(&htim17, TIM_CHANNEL_1);	
+			HAL_GPIO_WritePin(STP2_EN_GPIO_Port, STP2_EN_Pin, 1);
+			break;
+			
+			case 3:
+		HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+			HAL_GPIO_WritePin(STP4_EN_GPIO_Port, STP4_EN_Pin, 1);
+			break;
+			case 4:
+				
+		HAL_TIM_PWM_Stop(&htim15, TIM_CHANNEL_1);
+			HAL_TIM_PWM_Stop_IT(&htim15, TIM_CHANNEL_1);
+			HAL_GPIO_WritePin(STP5_EN_GPIO_Port, STP5_EN_Pin, 1);
+			break;
+		}
+}
+
+

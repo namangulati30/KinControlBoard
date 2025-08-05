@@ -1,0 +1,125 @@
+
+
+#include "mpu6050.h"
+
+uint8_t mpu6050Addr = DEV_ADDR;
+float xAccl;
+float yAccl;
+float zAccl;
+float xGyro;
+float yGyro;
+float zGyro;
+
+
+    /*
+    buf[0] = WHO_AM_I;
+    HAL_I2C_Master_Transmit(&hi2c2, mpu6050Addr, buf, 1, 1000);
+    HAL_I2C_Master_Receive(&hi2c2, mpu6050Addr, buf, 1, 1000);
+    //HAL_UART_Transmit(&huart2, buf, 1, 1000);
+    
+    for(uint8_t i=0; i<100; i++) {
+      HAL_Delay(5);
+    }
+    
+    printf("ACCEL_X: %0.2f\t", xAccl);
+    printf("ACCEL_Y: %0.2f\t", yAccl);
+    printf("ACCEL_Z: %0.2f\t", zAccl);
+    printf("\r\n");
+    
+    printf("GYRO_X: %0.3f\t", xGyro);
+    printf("GYRO_Y: %0.3f\t", yGyro);
+    printf("GYRO_Z: %0.3f\t", zGyro);
+    printf("\r\n");
+    
+    printf("MAG_X: %d\t", xMag);
+    printf("MAG_Y: %d\t", yMag);
+    printf("MAG_Z: %d\t", zMag);
+    printf("\r\n");
+    
+    
+    computeAngles();
+    printf("roll:  %0.2f\t", roll);
+    printf("pitch: %0.2f\t", pitch);
+    printf("yaw:   %0.2f\t", yaw);
+    printf("\r\n");
+    printf("\r\n");
+    
+    
+    */
+/*HDC 1080  CJMCU1080*/
+#define HDCADR	0X80
+#define HDCSET	0X20
+#define HDCID		0xFB
+#define HDCMODE	0x14  // 0x14 both temp & humi(14 bit resolution),  0x04 either temp | humi(14 bit resolution)
+#define HDCTEMP	0x00
+#define HDCHUMI	0x01
+
+uint8_t temperature, humidity; 
+
+
+uint8_t WhoAmIHDC(void){
+		uint8_t res[10];
+	uint8_t ID[10];
+	res[0]=HDCID;
+	//int checkloop=0;
+	 HAL_I2C_Master_Transmit(&hi2c2, HDCADR, res, 1, 1000);
+	HAL_I2C_Master_Receive(&hi2c2, HDCADR, ID, 3, 1000);
+	
+	if(ID[0]!=0x00 || ID[1]!= 0xDB || ID[2]!=0xFF) 
+	{
+		//printf("%d,	%d,	%d	\n", ID[0],ID[1],ID[2]);
+		return 0;
+	}
+	else
+		 {
+		return 1;
+	}
+	/*while(ID[0]!=0x00 || ID[1]!= 0xDB || ID[2]!=0xFF){
+		
+		if(checkloop>30) return 0;
+		HAL_I2C_Master_Transmit(&hi2c2, HDCADR, res, 1, 1000);
+	HAL_I2C_Master_Receive(&hi2c2, HDCADR, ID, 3, 1000);
+		checkloop++;
+	}*/
+}
+
+uint8_t HDC1080_Init(void){
+	uint8_t res[10];
+	res[0]=HDCID;
+//	int checkloop=0;
+ if (!WhoAmIHDC()) return 0;
+		sprintf((char*) res, "%d%d%d", HDCSET,HDCMODE,0x00);
+    HAL_I2C_Master_Transmit(&hi2c2, HDCADR, res, strlen((char*)res), 10);
+	return 1;
+}
+int16_t HDC1080_Get_Data(uint8_t regAddr){
+	uint16_t value; 
+	uint8_t buf[2]={regAddr, 0};
+	
+		HAL_I2C_Master_Transmit(&hi2c2, HDCADR, buf, 1, 10);
+		
+		HAL_Delay(20);
+    HAL_I2C_Master_Receive(&hi2c2, HDCADR, buf, 2, 10);
+
+    value = (uint16_t)buf[0]<<8;
+		value |=(buf[1]);
+    /* USER CODE END WHILE */
+		
+   switch (regAddr){
+			case HDCTEMP:
+					value=(value/pow(2, 16))*165-40;
+			break;
+			case HDCHUMI:
+					value=(value/65536.0)*100;
+			break;
+		}
+	return value;
+}
+void HADC1080_Display(void){
+	dataStream[getHDC1080]    = (uint8_t) HDC1080_Get_Data(HDCTEMP);       //temperature
+  dataStream[getHDC1080+1] = (uint8_t) HDC1080_Get_Data(HDCHUMI);  
+//	printf(" %d \r\n ",dataStream[getHDC1080]);
+//	printf(" %d h \r\n ",dataStream[getHDC1080+1]);
+}
+
+

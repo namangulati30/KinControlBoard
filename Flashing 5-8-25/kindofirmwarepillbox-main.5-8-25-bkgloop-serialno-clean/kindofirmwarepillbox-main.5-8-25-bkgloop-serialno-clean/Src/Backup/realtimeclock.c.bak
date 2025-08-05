@@ -1,0 +1,75 @@
+#include "realtimeclock.h"
+
+
+
+uint8_t time[10];
+uint8_t date[10];
+uint8_t rtc[20];
+struct rtc_time rtc_time;
+RTC_DateTypeDef gDate; 
+RTC_TimeTypeDef gTime; 
+
+void set_time (void) 
+{ 
+
+	
+  RTC_TimeTypeDef sTime; 
+  RTC_DateTypeDef sDate; 
+  sTime.Hours = rtc_time.tm_hour; // set hours 
+  sTime.Minutes = rtc_time.tm_min; // set minutes 
+  sTime.Seconds = rtc_time.tm_sec; // set seconds 
+  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE; 
+  sTime.StoreOperation = RTC_STOREOPERATION_RESET; 
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK) 
+  { 
+    Error_Handler(); 
+  } 
+  sDate.WeekDay = rtc_time.tm_wday; // day 
+  sDate.Month = rtc_time.tm_mon; // month 
+  sDate.Date = rtc_time.tm_mday; // date 
+  sDate.Year = rtc_time.tm_year; // year 
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK) 
+  { 
+    Error_Handler(); 
+  } 
+  HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, 0x32F2); // backup register 
+}
+
+void get_time(void) 
+{ 
+
+/* Get the RTC current Time */ 
+ HAL_RTC_GetTime(&hrtc, &gTime, RTC_FORMAT_BIN); 
+/* Get the RTC current Date */ 
+ HAL_RTC_GetDate(&hrtc, &gDate, RTC_FORMAT_BIN); 
+/* Display time Format: hh:mm:ss */ 
+ sprintf((char*)time,"%02d:%02d:%02d\n",gTime.Hours, gTime.Minutes, gTime.Seconds); 
+/* Display date Format: dd-mm-yy */ 
+ sprintf((char*)date,"%02d-%02d-%2d",gDate.Date, gDate.Month, 2000 + gDate.Year); 
+	sysTime();
+}
+
+
+void displaytime(void)
+{
+		printf("%02d:%02d:%02d\n",gTime.Hours, gTime.Minutes, gTime.Seconds); 
+	 printf("%02d-%02d-%2d\n",gDate.Date, gDate.Month, 2000 + gDate.Year);
+}
+/*
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart2){
+	
+	sscanf((char*)rxbuff, "%02d,%02d,%02d,%02d,%02d,%02d,%02d",&rtc_time.tm_sec,&rtc_time.tm_min,&rtc_time.tm_hour ,&rtc_time.tm_mday, &rtc_time.tm_mon, &rtc_time.tm_year, &rtc_time.tm_wday);
+	
+	
+	//,%d,%d,%d
+	//rtc_time.tm_sec,rtc_time.tm_min,rtc_time.tm_hour ,
+	rtc_time.tm_sec=rtc_time.tm_sec/10*16+rtc_time.tm_sec%10;
+	rtc_time.tm_min=rtc_time.tm_min/10*16+rtc_time.tm_min%10;
+	rtc_time.tm_hour=rtc_time.tm_hour/10*16+rtc_time.tm_hour%10;
+	rtc_time.tm_mday=rtc_time.tm_mday/10*16+rtc_time.tm_mday%10;
+	rtc_time.tm_mon=rtc_time.tm_mon/10*16+rtc_time.tm_mon%10;
+	rtc_time.tm_year=rtc_time.tm_year/10*16+rtc_time.tm_year%10;
+	rtc_time.tm_wday=rtc_time.tm_wday/10*16+rtc_time.tm_wday%10;
+	//printf("%d,%d,%d,%d,%d,%d,%d", rtc_time.tm_sec, rtc_time.tm_min, rtc_time.tm_hour, rtc_time.tm_mday, rtc_time.tm_mon,rtc_time.tm_year, rtc_time.tm_wday);
+	set_time();
+}*/
