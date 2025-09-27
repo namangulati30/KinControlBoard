@@ -401,8 +401,8 @@ int main(void)
 	
 			
 	
-		//printf(" Cup detect val %d \r\n", dataStream[PILLBX_DETE]);
-		if(value_adc[PILLBOX_DET_ADC]<4){
+		//printf(" Cup detect val %d \r\n", value_adc[PILLBOX_DET_ADC]);
+		if(value_adc[PILLBOX_DET_ADC]<150){
 		dataStream[PILLBX_DETE]=0; //no cup
 		} else{
 			dataStream[PILLBX_DETE]=1; // cup present
