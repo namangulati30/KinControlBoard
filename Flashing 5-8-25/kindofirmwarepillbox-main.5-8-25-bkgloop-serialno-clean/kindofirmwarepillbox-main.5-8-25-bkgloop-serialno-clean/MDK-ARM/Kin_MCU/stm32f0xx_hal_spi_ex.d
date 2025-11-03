@@ -6,12 +6,12 @@ kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ha
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f091xc.h
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/CMSIS/Include/core_cm0.h
-kin_mcu\stm32f0xx_hal_spi_ex.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+kin_mcu\stm32f0xx_hal_spi_ex.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u6\Bin\..\include\stdint.h
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/CMSIS/Include/cmsis_version.h
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h
-kin_mcu\stm32f0xx_hal_spi_ex.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+kin_mcu\stm32f0xx_hal_spi_ex.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u6\Bin\..\include\stddef.h
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h
 kin_mcu\stm32f0xx_hal_spi_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h

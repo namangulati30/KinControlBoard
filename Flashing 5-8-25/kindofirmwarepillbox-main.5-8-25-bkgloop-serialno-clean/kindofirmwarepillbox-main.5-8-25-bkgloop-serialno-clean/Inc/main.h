@@ -262,6 +262,7 @@ void __delay_ms(int32_t k);
 #define PNEU_ADC 0
 #define PILLBOX_DET_ADC 1
 #define STP_Z_CURRENT 2
+#define V_bat 3
 
 
 //led

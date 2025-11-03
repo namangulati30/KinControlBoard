@@ -399,8 +399,16 @@ int main(void)
 		
 		
 	
+		//printf(" Voltage Battery %d \r\n",value_adc[V_bat]);
+		if(value_adc[V_bat]<480)
+		{
+			HAL_GPIO_WritePin(SYS_EN_GPIO_Port, SYS_EN_Pin, GPIO_PIN_RESET);
+		}
+			else
+			{
+				HAL_GPIO_WritePin(SYS_EN_GPIO_Port, SYS_EN_Pin, GPIO_PIN_SET);
+			}
 			
-	
 		//printf(" Cup detect val %d \r\n", value_adc[PILLBOX_DET_ADC]);
 		if(value_adc[PILLBOX_DET_ADC]<150){
 		dataStream[PILLBX_DETE]=0; //no cup
