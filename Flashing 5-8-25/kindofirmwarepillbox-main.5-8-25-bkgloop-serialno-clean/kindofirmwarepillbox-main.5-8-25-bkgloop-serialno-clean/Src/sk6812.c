@@ -99,7 +99,7 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 			if(Check_Motor_X_Steps==6)
 			{
 				Motor_X_Steps++;
-				if(Motor_X_Steps>3500)
+				if(Motor_X_Steps>3600)
 				{
 					Check_Motor_X_Steps=0;
 					HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
