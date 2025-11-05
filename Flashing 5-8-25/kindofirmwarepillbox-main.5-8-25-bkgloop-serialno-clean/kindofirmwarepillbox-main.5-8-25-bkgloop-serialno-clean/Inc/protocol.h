@@ -151,8 +151,8 @@ typedef enum {
 	Nothingh = 51,
 	PickPillh = 56,
 	CancelPillh = 57,
-	Serialnumber = 60
-	
+	Serialnumber = 60,
+	ActiveDrop = 61
 } header_t;
 
 

@@ -31,6 +31,7 @@ uint8_t PickPills1=0;
 uint8_t CancelPickPills=0;
 uint8_t ReadNFC_PillB=0;
 uint8_t EnablePillBoxIRQ=0;
+uint8_t ActiveDropEn = 0;
 extern uint8_t Battery_plug;
 extern uint8_t serial_number[18]; 
 uint8_t dispense_check;
@@ -67,7 +68,8 @@ func_t func1[funcListLen] = {
 	{Nothingh, Nothing, 1},
 	{PickPillh, PickPill, 1},
 	{CancelPillh, CancelPill, 1},
-	{Serialnumber, STP_Y, 1}
+	{Serialnumber, STP_Y, 1},
+	{ActiveDrop, STP_Y, 1}
 };
 
 
@@ -309,6 +311,12 @@ void dataAnalysis(void) {
 					HAL_UART_Transmit(&huart2, txBuff, 3, 1000);
 					HAL_UART_Transmit(&huart2, serial_number, 18,10);
 					protocolReset();
+					break;
+				
+				case ActiveDrop:
+					ActiveDropEn =1;
+					protocolPromise(addr);
+					
 					break;
 				
 				case batteryoff:

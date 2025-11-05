@@ -19,7 +19,12 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 			if(Check_Motor_Z_Steps ==1)
 			{
 				Motor_Z_Steps++;
-				
+				if(Motor_Z_Steps>2400)
+				{
+					Check_Motor_Z_Steps=0;
+					HAL_TIM_PWM_Stop(&htim15, TIM_CHANNEL_1);
+					Motor_Z_Steps=0;
+				}
 			}
 //			stp = &stepper[4];
 //			stp->cnt++;
@@ -89,9 +94,20 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 					Motor_X_Steps=0;
 					
 				}
-				
-			}
 			
+			}
+			if(Check_Motor_X_Steps==6)
+			{
+				Motor_X_Steps++;
+				if(Motor_X_Steps>3500)
+				{
+					Check_Motor_X_Steps=0;
+					HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+					Motor_X_Steps=0;
+					
+				}
+			
+			}
 				
 			//stepCtrl(3);
 			

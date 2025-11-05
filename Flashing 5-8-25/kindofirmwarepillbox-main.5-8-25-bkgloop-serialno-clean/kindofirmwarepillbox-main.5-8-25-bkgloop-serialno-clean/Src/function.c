@@ -9,7 +9,8 @@ uint8_t temp_x=1, temp_z=1, temp_y=0, temp_pill=0, Door=3, rot=0;
 uint8_t rotPcnt=0, rotYcnt=0, rottol_Prot=7, rottol_y=100;
 
 uint32_t time_init=0, time_z=0, stepstart=0;
-
+extern uint8_t Check_Motor_Z_Steps;
+extern uint8_t Check_Motor_X_Steps;
 void stperInit(void){
 	
 	
@@ -470,4 +471,81 @@ uint8_t check_pillbox(void)
 	return read_tag;
 }
 
+
+uint32_t time_x_start_pick_pill;
+
+
+void Check_STPX_PickP(void)
+{
+	printf("Checking if we are at pick pos or not \r\n");
+	if(HAL_GPIO_ReadPin(ARM_X_STP2_GPIO_Port, ARM_X_STP2_Pin))
+					{
+						time_x_start_pick_pill = HAL_GetTick();
+						setdac(ARM_X);
+						while(HAL_GPIO_ReadPin(ARM_X_STP2_GPIO_Port, ARM_X_STP2_Pin))
+							{
+						printf("Checking if we are at pick pos or not \r\n");
+						HAL_IWDG_Refresh(&hiwdg);
+						startstepper(ARM_X,1);
+						if((HAL_GetTick()-time_x_start_pick_pill)>3000)
+							{
+							HAL_TIM_PWM_Stop_IT(&htim1, TIM_CHANNEL_1);
+								setdacstop(ARM_X);
+								break;
+								
+								}		
+							}
+							HAL_TIM_PWM_Stop_IT(&htim1, TIM_CHANNEL_1);
+							setdacstop(ARM_X);
+					}
+	
+}
+
+
+void Check_STPX_DropP(void)
+{
+	printf("Checking if we are at drop pos or not \r\n");
+	if(HAL_GPIO_ReadPin(ARM_X_STP1_GPIO_Port, ARM_X_STP1_Pin))
+					{
+						time_x_start_pick_pill = HAL_GetTick();
+						setdac(ARM_X);
+						while(HAL_GPIO_ReadPin(ARM_X_STP1_GPIO_Port, ARM_X_STP1_Pin))
+							{
+						printf("Checking if we are at drop pos or not \r\n");
+						HAL_IWDG_Refresh(&hiwdg);
+						startstepper(ARM_X,0);
+						if((HAL_GetTick()-time_x_start_pick_pill)>3000)
+							{
+							HAL_TIM_PWM_Stop_IT(&htim1, TIM_CHANNEL_1);
+								setdacstop(ARM_X);
+								break;
+
+								}		
+							}
+							HAL_TIM_PWM_Stop_IT(&htim1, TIM_CHANNEL_1);
+							setdacstop(ARM_X);
+					}
+	
+}
+
+uint8_t active_pill_drop(void)
+	{
+		Check_STPX_DropP();
+		printf(" HE %d \r\n", value_adc[4]);
+		if (value_adc[4]>500)
+		{
+			return 1;
+		}
+		printf(" HERE NOW \r\n");
+		Check_Motor_Z_Steps = 1;
+		startstepper(ARM_Z,0);
+		while(Check_Motor_Z_Steps) HAL_IWDG_Refresh(&hiwdg);
+		Check_Motor_X_Steps=6;
+		startstepper(ARM_X,1);
+		while(Check_Motor_X_Steps) HAL_IWDG_Refresh(&hiwdg);
+		Check_Motor_X_Steps=6;
+		startstepper(ARM_X,0);
+		while(Check_Motor_X_Steps) HAL_IWDG_Refresh(&hiwdg);
+		return 0;
+	}
 

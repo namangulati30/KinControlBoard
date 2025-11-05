@@ -17,8 +17,9 @@ void test1(void);
 void test2(void);
 void returnState(void);
 uint8_t check_pillbox(void);
-
-
+uint8_t active_pill_drop(void);
+void Check_STPX_DropP(void);
+void Check_STPX_PickP(void);
 
 void frontdoor(uint8_t state);
 

@@ -108,6 +108,7 @@ extern uint8_t PickPills1;
 extern uint8_t CancelPickPills;
 extern uint8_t ReadNFC_PillB;
 extern uint8_t EnablePillBoxIRQ;
+extern uint8_t ActiveDropEn;
 void PickPills(void);
 void Check_STPX_PickP(void);
 uint8_t interrupt=0;
@@ -115,8 +116,8 @@ uint8_t Battery_plug=1;
 uint8_t buff[255];
 int32_t uid_len = 0;	
 extern int16_t rotatereturn;
-uint32_t time_x_start_pick_pill;
 extern uint8_t opengate;
+uint16_t time_x_start_pick_pill_main;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -307,6 +308,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	
+	
+	active_pill_drop();
+	while(1)
+	{
+		HAL_IWDG_Refresh(&hiwdg);
+	}
   while (1)
   {
     /* USER CODE END WHILE */
@@ -322,7 +330,7 @@ int main(void)
 		 }
 		 counter_machine_update++;
 		
-		
+		//printf(" HE %d \r\n", value_adc[4]);
 		if(ARM_Z_dir!= temp_z || (ARM_Z_dir==1 &&(value_adc[4]>500))){
 			if(dacZ==0) {
 				setdac(ARM_Z);
@@ -977,7 +985,7 @@ void PickPills()
 		startstepper(ARM_Z,1);  
 	}
 	StopStp(ARM_Z);    
-		time_x_start_pick_pill = HAL_GetTick();
+	time_x_start_pick_pill_main = HAL_GetTick();
 	
 	
 	
@@ -1032,7 +1040,7 @@ void PickPills()
 		printf("Checking if we are at pick pos or not \r\n");
 		HAL_IWDG_Refresh(&hiwdg);
 		startstepper(ARM_X,1);
-		if((HAL_GetTick()-time_x_start_pick_pill)>3000){
+		if((HAL_GetTick()-time_x_start_pick_pill_main)>3000){
 			HAL_TIM_PWM_Stop_IT(&htim1, TIM_CHANNEL_1);
 			break;
 		}		
@@ -1129,31 +1137,6 @@ void PickPills()
 
 }
 
-void Check_STPX_PickP(void)
-{
-	printf("Checking if we are at pick pos or not \r\n");
-	if(HAL_GPIO_ReadPin(ARM_X_STP2_GPIO_Port, ARM_X_STP2_Pin))
-					{
-						time_x_start_pick_pill = HAL_GetTick();
-						setdac(ARM_X);
-						while(HAL_GPIO_ReadPin(ARM_X_STP2_GPIO_Port, ARM_X_STP2_Pin))
-							{
-						printf("Checking if we are at pick pos or not \r\n");
-						HAL_IWDG_Refresh(&hiwdg);
-						startstepper(ARM_X,1);
-						if((HAL_GetTick()-time_x_start_pick_pill)>3000)
-							{
-							HAL_TIM_PWM_Stop_IT(&htim1, TIM_CHANNEL_1);
-								setdacstop(ARM_X);
-								break;
-								
-								}		
-							}
-							HAL_TIM_PWM_Stop_IT(&htim1, TIM_CHANNEL_1);
-							setdacstop(ARM_X);
-					}
-	
-}
 
 
 /* USER CODE END 4 */
