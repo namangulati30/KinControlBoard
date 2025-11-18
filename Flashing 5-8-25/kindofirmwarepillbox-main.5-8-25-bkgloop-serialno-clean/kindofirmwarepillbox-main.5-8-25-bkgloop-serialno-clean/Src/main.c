@@ -310,11 +310,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	
 	
-	active_pill_drop();
-	while(1)
-	{
-		HAL_IWDG_Refresh(&hiwdg);
-	}
+
+	
   while (1)
   {
     /* USER CODE END WHILE */
@@ -564,6 +561,12 @@ int main(void)
 		HAL_GPIO_WritePin(FRNTDR_LCK_GPIO_Port, FRNTDR_LCK_Pin,GPIO_PIN_RESET);
 		opengate = 0;
 		protocolActionCallback(frntLock,1);
+	}
+	if(ActiveDropEn)
+	{
+		active_pill_drop();
+		ActiveDropEn = 0;
+		protocolActionCallback(ActiveDrop,1);
 	}
 	
 }
