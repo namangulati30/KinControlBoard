@@ -437,6 +437,7 @@ void readNFCSensor (void) {
 		PILLBNFC_buff[6] = BUFF_NFC[5];
 		PILLBNFC_buff[7] = BUFF_NFC[6];
 		PILLBNFC_buff[8] = BUFF_NFC[7];
+		MFRC522_AntennaOff();
 		HAL_UART_Transmit(&huart2, PILLBNFC_buff, 9,10);
 //			NFCBUF[1] = 0;
 //      NFCBUF[2]= 0;
@@ -467,6 +468,7 @@ uint8_t check_pillbox(void)
 				break;
 	}
 	}
+	MFRC522_AntennaOff();
 	return read_tag;
 }
 
