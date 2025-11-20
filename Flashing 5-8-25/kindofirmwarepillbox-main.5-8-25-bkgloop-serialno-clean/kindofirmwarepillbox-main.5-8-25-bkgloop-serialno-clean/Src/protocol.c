@@ -678,7 +678,6 @@ void sendMachineStatus(void) {
   }*/ 
 	txBuff[10]=value_adc[PNEU_ADC]>>8;
 	txBuff[11]=value_adc[PNEU_ADC];
-	printf("Pump PressureSensor %d \r\n", value_adc[PNEU_ADC]);
 //  HAL_UART_Transmit(&huart6, txBuff, 10,1000);
 	txBuff[7]=dataStream[FRNTDR_CLS];
 	txBuff[8]=dataStream[FRNTDR_BUTT];
