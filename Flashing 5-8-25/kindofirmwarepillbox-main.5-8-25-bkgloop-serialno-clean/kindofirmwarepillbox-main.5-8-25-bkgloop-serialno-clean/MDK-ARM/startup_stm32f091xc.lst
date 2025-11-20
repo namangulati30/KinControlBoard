@@ -379,10 +379,10 @@ ARM Macro Assembler    Page 6
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
 ork --depend=kin_mcu\startup_stm32f091xc.d -okin_mcu\startup_stm32f091xc.o -I.\
-RTE\_Kin_MCU -I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\C
+RTE\_Kin_MCU -I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\C
 MSIS\Core\Include" -I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F
 0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include" --predefine="__MICROLI
-B SETA 1" --predefine="__UVISION_VERSION SETA 536" --predefine="_RTE_ SETA 1" -
+B SETA 1" --predefine="__UVISION_VERSION SETA 537" --predefine="_RTE_ SETA 1" -
 -predefine="STM32F091xC SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32
 f091xc.lst startup_stm32f091xc.s
 
