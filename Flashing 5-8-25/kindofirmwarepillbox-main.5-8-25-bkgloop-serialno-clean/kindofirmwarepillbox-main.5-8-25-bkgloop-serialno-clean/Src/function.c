@@ -438,6 +438,8 @@ void readNFCSensor (void) {
 		PILLBNFC_buff[6] = BUFF_NFC[5];
 		PILLBNFC_buff[7] = BUFF_NFC[6];
 		PILLBNFC_buff[8] = BUFF_NFC[7];
+	
+	MFRC522_AntennaOff();
 		HAL_UART_Transmit(&huart2, PILLBNFC_buff, 9,10);
 //			NFCBUF[1] = 0;
 //      NFCBUF[2]= 0;
@@ -468,7 +470,9 @@ uint8_t check_pillbox(void)
 				break;
 	}
 	}
+	MFRC522_AntennaOff();
 	return read_tag;
+	
 }
 
 
@@ -546,6 +550,16 @@ uint8_t active_pill_drop(void)
 		Check_Motor_X_Steps=6;
 		startstepper(ARM_X,0);
 		while(Check_Motor_X_Steps) HAL_IWDG_Refresh(&hiwdg);
+		stepz_move_up();   
 		return 0;
 	}
 
+void stepz_move_up(void)
+{
+	while(value_adc[4]>300)
+		{
+		startstepper(ARM_Z,1);  
+		}
+		StopStp(ARM_Z); 
+	
+}
