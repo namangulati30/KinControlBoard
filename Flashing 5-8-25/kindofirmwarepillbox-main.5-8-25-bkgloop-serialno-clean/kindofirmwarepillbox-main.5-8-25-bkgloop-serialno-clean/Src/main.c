@@ -799,7 +799,7 @@ void PickPills()
 			}
 		if(dispense_check ==1)
 		{
-		if(value_adc[PILLBOX_DET_ADC]<4)
+		if(value_adc[PILLBOX_DET_ADC]<150)
 		{
 			Check_Pill_Picked=0;
 			printf("Interrupt Cup\r\n");
