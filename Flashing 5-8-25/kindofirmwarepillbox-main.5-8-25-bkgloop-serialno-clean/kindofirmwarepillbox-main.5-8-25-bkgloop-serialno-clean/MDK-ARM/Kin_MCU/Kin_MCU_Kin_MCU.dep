@@ -1,9 +1,9 @@
 Dependencies for Project 'Kin_MCU', Target 'Kin_MCU': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARM_Compiler_5.06u6
-F (startup_stm32f091xc.s)(0x68DBC304)(--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"--pd "__UVISION_VERSION SETA 537" --pd "_RTE_ SETA 1" --pd "STM32F091xC SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f091xc.lst --xref -o kin_mcu\startup_stm32f091xc.o --depend kin_mcu\startup_stm32f091xc.d)
+F (startup_stm32f091xc.s)(0x6929D02E)(--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"--pd "__UVISION_VERSION SETA 537" --pd "_RTE_ SETA 1" --pd "STM32F091xC SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f091xc.lst --xref -o kin_mcu\startup_stm32f091xc.o --depend kin_mcu\startup_stm32f091xc.d)
 F (..\Src\mpu6050.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\mpu6050.o --omf_browse kin_mcu\mpu6050.crf --depend kin_mcu\mpu6050.d)
 I (../Inc/mpu6050.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -46,8 +46,8 @@ I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\string.h)(0x599ECD2C)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -63,7 +63,7 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\math.h)(0x599ECD2E)
 F (..\Src\stepper.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\stepper.o --omf_browse kin_mcu\stepper.crf --depend kin_mcu\stepper.d)
 I (../Inc/stepper.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -107,8 +107,8 @@ I (../Inc/mpu6050.h)(0x68DBC304)
 I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -120,7 +120,7 @@ I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 F (..\Src\rc522.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\rc522.o --omf_browse kin_mcu\rc522.crf --depend kin_mcu\rc522.d)
 I (../Inc/rc522.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -164,8 +164,8 @@ I (../Inc/mpu6050.h)(0x68DBC304)
 I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -175,7 +175,7 @@ I (../Inc/usart.h)(0x68DBC304)
 I (../Inc/gpio.h)(0x68DBC304)
 I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
-F (..\Src\sk6812.c)(0x6925AEEF)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\sk6812.o --omf_browse kin_mcu\sk6812.crf --depend kin_mcu\sk6812.d)
+F (..\Src\sk6812.c)(0x6929B1D3)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\sk6812.o --omf_browse kin_mcu\sk6812.crf --depend kin_mcu\sk6812.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -212,64 +212,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x68DBC303)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x68DBC303)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x68DBC303)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
-I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stdio.h)(0x599ECD2C)
-I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stdlib.h)(0x599ECD2C)
-I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\math.h)(0x599ECD2E)
-I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\string.h)(0x599ECD2C)
-I (../Inc/mpu6050.h)(0x68DBC304)
-I (../Inc/MadgwickAHRS.h)(0x68DBC304)
-I (../Inc/stepper.h)(0x68DBC304)
-I (../Inc/rc522.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
-I (../Inc/adc.h)(0x68DBC304)
-I (../Inc/dma.h)(0x68DBC304)
-I (../Inc/i2c.h)(0x68DBC304)
-I (../Inc/spi.h)(0x68DBC304)
-I (../Inc/tim.h)(0x68DBC304)
-I (../Inc/usart.h)(0x68DBC304)
-I (../Inc/gpio.h)(0x68DBC304)
-I (../Inc/icm40608.h)(0x68DBC304)
-I (../Inc/iwdg.h)(0x68DBC304)
-F (..\Src\protocol.c)(0x6925AEEF)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\protocol.o --omf_browse kin_mcu\protocol.crf --depend kin_mcu\protocol.d)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/main.h)(0x6925AE68)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
-I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x68DBC303)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x68DBC303)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f091xc.h)(0x68DBC303)
-I (../Drivers/CMSIS/Include/core_cm0.h)(0x68DBC303)
-I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stdint.h)(0x599ECD2E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x68DBC303)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x68DBC303)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x68DBC303)
-I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x68DBC303)
-I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stddef.h)(0x599ECD2C)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc_ex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_iwdg.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi_ex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x68DBC303)
-I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x68DBC303)
+I (../Inc/main.h)(0x6929B1D3)
 I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stdio.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stdlib.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\math.h)(0x599ECD2E)
@@ -278,8 +221,8 @@ I (../Inc/mpu6050.h)(0x68DBC304)
 I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
-I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -289,9 +232,9 @@ I (../Inc/usart.h)(0x68DBC304)
 I (../Inc/gpio.h)(0x68DBC304)
 I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
-F (..\Src\function.c)(0x6925AEEF)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\function.o --omf_browse kin_mcu\function.crf --depend kin_mcu\function.d)
-I (../Inc/function.h)(0x6925AEEE)
-I (../Inc/main.h)(0x6925AE68)
+F (..\Src\protocol.c)(0x6929C9C7)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\protocol.o --omf_browse kin_mcu\protocol.crf --depend kin_mcu\protocol.d)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -336,7 +279,64 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
+I (../Inc/function.h)(0x6929B1D3)
+I (../Inc/adc.h)(0x68DBC304)
+I (../Inc/dma.h)(0x68DBC304)
+I (../Inc/i2c.h)(0x68DBC304)
+I (../Inc/spi.h)(0x68DBC304)
+I (../Inc/tim.h)(0x68DBC304)
+I (../Inc/usart.h)(0x68DBC304)
+I (../Inc/gpio.h)(0x68DBC304)
+I (../Inc/icm40608.h)(0x68DBC304)
+I (../Inc/iwdg.h)(0x68DBC304)
+F (..\Src\function.c)(0x6929C9C7)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\function.o --omf_browse kin_mcu\function.crf --depend kin_mcu\function.d)
+I (../Inc/function.h)(0x6929B1D3)
+I (../Inc/main.h)(0x6929B1D3)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
+I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x68DBC303)
+I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x68DBC303)
+I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f091xc.h)(0x68DBC303)
+I (../Drivers/CMSIS/Include/core_cm0.h)(0x68DBC303)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stdint.h)(0x599ECD2E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x68DBC303)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x68DBC303)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x68DBC303)
+I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x68DBC303)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stddef.h)(0x599ECD2C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc_ex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_iwdg.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi_ex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x68DBC303)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x68DBC303)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stdio.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stdlib.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\math.h)(0x599ECD2E)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\string.h)(0x599ECD2C)
+I (../Inc/mpu6050.h)(0x68DBC304)
+I (../Inc/MadgwickAHRS.h)(0x68DBC304)
+I (../Inc/stepper.h)(0x68DBC304)
+I (../Inc/rc522.h)(0x68DBC304)
+I (../Inc/sk6812.h)(0x68DBC304)
+I (../Inc/protocol.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -351,7 +351,7 @@ I (../Inc/pn532.h)(0x68DBC304)
 I (C:\Keil_v5\ARM\ARM_Compiler_5.06u6\include\stdbool.h)(0x599ECD2E)
 F (..\Src\icm40608.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\icm40608.o --omf_browse kin_mcu\icm40608.crf --depend kin_mcu\icm40608.d)
 I (../Inc/icm40608.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -396,8 +396,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -406,8 +406,8 @@ I (../Inc/tim.h)(0x68DBC304)
 I (../Inc/usart.h)(0x68DBC304)
 I (../Inc/gpio.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
-F (../Src/main.c)(0x6925AEEF)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\main.o --omf_browse kin_mcu\main.crf --depend kin_mcu\main.d)
-I (../Inc/main.h)(0x6925AE68)
+F (../Src/main.c)(0x6929D0C9)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\main.o --omf_browse kin_mcu\main.crf --depend kin_mcu\main.d)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -452,8 +452,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -465,7 +465,7 @@ I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 F (../Src/gpio.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\gpio.o --omf_browse kin_mcu\gpio.crf --depend kin_mcu\gpio.d)
 I (../Inc/gpio.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -510,8 +510,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -522,7 +522,7 @@ I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 F (../Src/adc.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\adc.o --omf_browse kin_mcu\adc.crf --depend kin_mcu\adc.d)
 I (../Inc/adc.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -567,8 +567,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
 I (../Inc/spi.h)(0x68DBC304)
@@ -579,7 +579,7 @@ I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 F (..\Src\dma.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\dma.o --omf_browse kin_mcu\dma.crf --depend kin_mcu\dma.d)
 I (../Inc/dma.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -624,8 +624,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
 I (../Inc/spi.h)(0x68DBC304)
@@ -636,7 +636,7 @@ I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 F (../Src/i2c.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\i2c.o --omf_browse kin_mcu\i2c.crf --depend kin_mcu\i2c.d)
 I (../Inc/i2c.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -681,8 +681,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/spi.h)(0x68DBC304)
@@ -693,7 +693,7 @@ I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 F (../Src/iwdg.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\iwdg.o --omf_browse kin_mcu\iwdg.crf --depend kin_mcu\iwdg.d)
 I (../Inc/iwdg.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -738,8 +738,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -750,7 +750,7 @@ I (../Inc/gpio.h)(0x68DBC304)
 I (../Inc/icm40608.h)(0x68DBC304)
 F (../Src/spi.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\spi.o --omf_browse kin_mcu\spi.crf --depend kin_mcu\spi.d)
 I (../Inc/spi.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -795,8 +795,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -807,7 +807,7 @@ I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 F (../Src/tim.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\tim.o --omf_browse kin_mcu\tim.crf --depend kin_mcu\tim.d)
 I (../Inc/tim.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -852,8 +852,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -864,7 +864,7 @@ I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 F (../Src/usart.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\usart.o --omf_browse kin_mcu\usart.crf --depend kin_mcu\usart.d)
 I (../Inc/usart.h)(0x68DBC304)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -909,8 +909,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -920,7 +920,7 @@ I (../Inc/gpio.h)(0x68DBC304)
 I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 F (../Src/stm32f0xx_it.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\stm32f0xx_it.o --omf_browse kin_mcu\stm32f0xx_it.crf --depend kin_mcu\stm32f0xx_it.d)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -965,8 +965,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
@@ -978,7 +978,7 @@ I (../Inc/icm40608.h)(0x68DBC304)
 I (../Inc/iwdg.h)(0x68DBC304)
 I (../Inc/stm32f0xx_it.h)(0x68DBC304)
 F (../Src/stm32f0xx_hal_msp.c)(0x68DBC304)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Kin_MCU-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"C:\Users\Naman Gulati\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F091xC -D_RTE_ -DSERIAL_NUMBER="\"YOUR_SERIAL_NUMBER\""-o kin_mcu\stm32f0xx_hal_msp.o --omf_browse kin_mcu\stm32f0xx_hal_msp.crf --depend kin_mcu\stm32f0xx_hal_msp.d)
-I (../Inc/main.h)(0x6925AE68)
+I (../Inc/main.h)(0x6929B1D3)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x68DBC303)
 I (../Inc/stm32f0xx_hal_conf.h)(0x68DBC304)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x68DBC303)
@@ -1023,8 +1023,8 @@ I (../Inc/MadgwickAHRS.h)(0x68DBC304)
 I (../Inc/stepper.h)(0x68DBC304)
 I (../Inc/rc522.h)(0x68DBC304)
 I (../Inc/sk6812.h)(0x68DBC304)
-I (../Inc/protocol.h)(0x6925AEEE)
-I (../Inc/function.h)(0x6925AEEE)
+I (../Inc/protocol.h)(0x6929B1D3)
+I (../Inc/function.h)(0x6929B1D3)
 I (../Inc/adc.h)(0x68DBC304)
 I (../Inc/dma.h)(0x68DBC304)
 I (../Inc/i2c.h)(0x68DBC304)
