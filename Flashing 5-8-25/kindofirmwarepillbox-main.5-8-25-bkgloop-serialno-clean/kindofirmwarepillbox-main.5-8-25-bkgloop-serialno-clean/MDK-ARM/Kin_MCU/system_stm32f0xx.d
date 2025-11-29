@@ -2,7 +2,7 @@ kin_mcu\system_stm32f0xx.o: ../Src/system_stm32f0xx.c
 kin_mcu\system_stm32f0xx.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
 kin_mcu\system_stm32f0xx.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f091xc.h
 kin_mcu\system_stm32f0xx.o: ../Drivers/CMSIS/Include/core_cm0.h
-kin_mcu\system_stm32f0xx.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u6\Bin\..\include\stdint.h
+kin_mcu\system_stm32f0xx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 kin_mcu\system_stm32f0xx.o: ../Drivers/CMSIS/Include/cmsis_version.h
 kin_mcu\system_stm32f0xx.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 kin_mcu\system_stm32f0xx.o: ../Drivers/CMSIS/Include/cmsis_armcc.h

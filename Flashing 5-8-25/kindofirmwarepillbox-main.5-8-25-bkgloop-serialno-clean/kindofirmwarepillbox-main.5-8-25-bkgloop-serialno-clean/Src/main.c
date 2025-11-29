@@ -482,10 +482,10 @@ int main(void)
 					buff[1] = dispense_check;
 					buff[2] = 0;
 					buff[3] = 0;
-//				buff[4] = Motor_Z_Steps>>8;
-//				buff[5] = Motor_Z_Steps;
-					buff[4] =0;
-					buff[5] = 0;
+				buff[4] = Motor_Z_Steps>>8;
+				buff[5] = Motor_Z_Steps;
+//					buff[4] =0;
+//					buff[5] = 0;
 					printf("Successful \r\n");
 					printf("Motor Z Steps %d \r\n", Motor_Z_Steps);
 				HAL_UART_Transmit(&huart2, buff, 6,10);

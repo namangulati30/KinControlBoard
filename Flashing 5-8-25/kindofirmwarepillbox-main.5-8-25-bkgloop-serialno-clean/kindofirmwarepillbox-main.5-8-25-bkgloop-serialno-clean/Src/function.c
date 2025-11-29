@@ -541,7 +541,7 @@ uint8_t active_pill_drop(void)
 			return 1;
 		}
 		printf(" HERE NOW \r\n");
-		Check_Motor_Z_Steps = 1;
+		Check_Motor_Z_Steps = 2;
 		startstepper(ARM_Z,0);
 		while(Check_Motor_Z_Steps) HAL_IWDG_Refresh(&hiwdg);
 		Check_Motor_X_Steps=6;

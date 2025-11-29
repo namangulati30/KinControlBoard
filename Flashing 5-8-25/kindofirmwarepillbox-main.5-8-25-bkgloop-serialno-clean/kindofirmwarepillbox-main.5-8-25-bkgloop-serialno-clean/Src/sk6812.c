@@ -16,7 +16,7 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
   
 		
 	 	if(htim == &htim15){
-			if(Check_Motor_Z_Steps ==1)
+			if(Check_Motor_Z_Steps ==2)
 			{
 				Motor_Z_Steps++;
 				if(Motor_Z_Steps>2400)
@@ -26,6 +26,11 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 					Motor_Z_Steps=0;
 				}
 			}
+			else if(Check_Motor_Z_Steps ==1)
+			{
+				Motor_Z_Steps++;
+				
+			} 
 //			stp = &stepper[4];
 //			stp->cnt++;
 //			if(stp->cnt>stp->steps && pnpX==0)  { 
