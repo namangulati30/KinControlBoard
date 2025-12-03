@@ -656,7 +656,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 		}
 	}/**/
 		/**/
-		if(GPIO_Pin == CROT_ENCZ_Pin && HAL_GetTick()-rottime>70){
+		if(GPIO_Pin == CROT_ENCZ_Pin && HAL_GetTick()-rottime>20){
 			rottime=HAL_GetTick();
 			//printf("cnt: %d\n time:	%d\n",rotYcnt, rottime);
 			if(ismove_y==1){
